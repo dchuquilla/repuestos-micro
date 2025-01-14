@@ -26,7 +26,7 @@ services:
       - app-network
 
   platform:
-    image: ruby:3.1
+    image: ruby:3.2
     container_name: platform_service
     working_dir: /app
     volumes:

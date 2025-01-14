@@ -1,4 +1,4 @@
-FROM node:20
+FROM node:22
 
 # Set working directory
 WORKDIR /app
@@ -13,7 +13,7 @@ RUN npm install
 COPY . .
 
 # Expose port 3000
-EXPOSE 3000
+EXPOSE 3002
 
 # Start the application
 CMD ["npm", "start"]

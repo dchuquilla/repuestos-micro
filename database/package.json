@@ -12,9 +12,6 @@
     "morgan": "^1.10.0",
     "cors": "^2.8.5"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
-  },
   "author": "",
   "license": "ISC"
 }
