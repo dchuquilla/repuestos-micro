@@ -1,0 +1,38 @@
+source 'https://rubygems.org'
+
+gem 'rails', '8.0.0'
+gem 'pg', '~> 1.1'
+gem 'puma', '~> 5.0'
+gem 'jbuilder', '~> 2.7'
+gem 'bootsnap', '>= 1.4.4', require: false
+
+# Use Hotwire for real-time features
+gem 'hotwire-rails'
+
+# Use Turbo for real-time updates
+gem 'turbo-rails'
+
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS)
+gem 'rack-cors'
+
+group :development, :test do
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 5.0'
+end
+
+group :development do
+  gem 'listen', '~> 3.3'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'capybara', '>= 3.26'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
+  gem 'factory_bot_rails'
+  gem 'faker'
+end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  chatbot:
+    image: node:latest
+    container_name: chatbot_service
+    working_dir: /app
+    volumes:
+      - ./chatbot:/app
+    ports:
+      - "3001:3000"
+    command: npm start
+    networks:
+      - app-network
+
+  database:
+    image: node:latest
+    container_name: database_service
+    working_dir: /app
+    volumes:
+      - ./database:/app
+    ports:
+      - "3002:3000"
+    command: npm start
+    networks:
+      - app-network
+
+  platform:
+    image: ruby:3.1
+    container_name: platform_service
+    working_dir: /app
+    volumes:
+      - ./platform:/app
+    ports:
+      - "3003:3000"
+    command: bash -c "bundle install && rails server -b 0.0.0.0"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
